@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Emilia",
+    "age": 32,
+    "height": 178,
+    "hairColor": "brown"
+  },
+  {
+    "id": "1",
+    "name": "rikard",
+    "password": "lösen"
+  },
+  {
+    "id": "2",
+    "name": "Liselotte",
+    "password": "$2b$10$UFs5MDjcwXVl9D8BVj95M.lRNpiaXqeQt.QHtlxSNcZTlgP3/nOni"
+  },
+  {
+    "id": "2",
+    "password": "$2b$10$c/Z88pTTKfeQVINfqQXcKenKym6ZKcwDiGUI9IB58pMgfi3G9ELHK"
+  },
+  {
+    "id": "3",
+    "password": "$2b$10$D2wd5rUakiUPgLTguUn7mOP2T5p6LZaQK6EVctG/Q3aiT/ShNJsEe"
+  },
+  {
+    "id": "3",
+    "password": "$2b$10$igy5/Ip9yIyI7fVAnYDjjugHB/6Eh0ij0paXFdwYd8n6pCsg9mhMa"
+  },
+  {
+    "id": "cus_ObC2yDUlFK6N06",
+    "password": "$2b$10$cpon5zU8DSMfR/N0fR6HLuxXMMfT7JUfOcTJC3z2tuf1EMjgtwtiC"
+  },
+  {
+    "id": "cus_ObDRYo9JBOPyke",
+    "email": "hej@mejl.se",
+    "name": "namn",
+    "password": "$2b$10$kjkimYb/n..AGM6YDWNCDOFm9qSrfGeWgJQLrZD5KQmgTYqtRAJd2"
+  },
+  {
+    "id": "cus_OcMppJVHQhKsDo",
+    "email": "mejl@mejl.se",
+    "name": "namnet",
+    "password": "$2b$10$RjSY1Y3JT1DkHYjNcq5hMODogz.jIWDVPAo2o7JYCbTKTVwv6vECO"
+  },
+  {
+    "id": "cus_OcMp0sTBt26PA5",
+    "name": "mila",
+    "password": "$2b$10$nOEfvQgTVQ0okNe.O1WQcu07O.XpBBFZ6sZi91iZxwxVyols81f8e"
+  }
+]

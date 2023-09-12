@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.purchasebutton {
+    background-color: rgb(207, 232, 224);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.loginbutton {
+    background-color: rgb(220, 220, 243);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
