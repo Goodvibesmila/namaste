@@ -1,51 +1,30 @@
 [
   {
-    "name": "Emilia",
-    "age": 32,
-    "height": 178,
-    "hairColor": "brown"
+    "id": "cus_OdVpM5RMymodou",
+    "name": "Millan",
+    "password": "$2b$10$LwLGYxL2EG6gu5FjwByWjOhx8RJgNeARkebGjGAeT2cHiEZ6EI7MO"
   },
   {
-    "id": "1",
-    "name": "rikard",
-    "password": "lösen"
-  },
-  {
-    "id": "2",
-    "name": "Liselotte",
-    "password": "$2b$10$UFs5MDjcwXVl9D8BVj95M.lRNpiaXqeQt.QHtlxSNcZTlgP3/nOni"
-  },
-  {
-    "id": "2",
-    "password": "$2b$10$c/Z88pTTKfeQVINfqQXcKenKym6ZKcwDiGUI9IB58pMgfi3G9ELHK"
-  },
-  {
-    "id": "3",
-    "password": "$2b$10$D2wd5rUakiUPgLTguUn7mOP2T5p6LZaQK6EVctG/Q3aiT/ShNJsEe"
-  },
-  {
-    "id": "3",
-    "password": "$2b$10$igy5/Ip9yIyI7fVAnYDjjugHB/6Eh0ij0paXFdwYd8n6pCsg9mhMa"
-  },
-  {
-    "id": "cus_ObC2yDUlFK6N06",
-    "password": "$2b$10$cpon5zU8DSMfR/N0fR6HLuxXMMfT7JUfOcTJC3z2tuf1EMjgtwtiC"
-  },
-  {
-    "id": "cus_ObDRYo9JBOPyke",
-    "email": "hej@mejl.se",
-    "name": "namn",
-    "password": "$2b$10$kjkimYb/n..AGM6YDWNCDOFm9qSrfGeWgJQLrZD5KQmgTYqtRAJd2"
-  },
-  {
-    "id": "cus_OcMppJVHQhKsDo",
+    "id": "cus_OdVqqIWm7E6GjL",
     "email": "mejl@mejl.se",
     "name": "namnet",
-    "password": "$2b$10$RjSY1Y3JT1DkHYjNcq5hMODogz.jIWDVPAo2o7JYCbTKTVwv6vECO"
+    "password": "$2b$10$LA3yRPKyIbCgj.UGk0gPw.3Us7sGhygIijHUdlIJc1EyApnldmLTG"
   },
   {
-    "id": "cus_OcMp0sTBt26PA5",
+    "id": "cus_OdW0MdLQD1oLW0",
     "name": "mila",
-    "password": "$2b$10$nOEfvQgTVQ0okNe.O1WQcu07O.XpBBFZ6sZi91iZxwxVyols81f8e"
+    "password": "$2b$10$ucl1ObekDQ9aSqqRHNndYOHBswXKhGpmI5mLRve3t0/8n8m378Vdq"
+  },
+  {
+    "id": "cus_OdW4ZPRZgIZsnH",
+    "email": "jonas@mejl.se",
+    "name": "jonas",
+    "password": "$2b$10$MVic4BwK/xnHkjWGPAYLPOveDFwrPnagbI7VtxbGH6Q1FVXNHfbBm"
+  },
+  {
+    "id": "cus_OdW64kCsToMSqo",
+    "email": "lis@lotte.se",
+    "name": "liselotte",
+    "password": "$2b$10$kv10M1vNEPC5WHGr.SJntumAR/UVrorqQvuqjuhKPW2WGnUVxsNPG"
   }
 ]

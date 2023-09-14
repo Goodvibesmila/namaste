@@ -1,7 +1,7 @@
 import { useState, createContext, useContext, PropsWithChildren, useEffect} from "react";
 
 interface Iprice {
-    id: number,
+    id: string,
     unit_amount: number,
 }
 
@@ -11,6 +11,11 @@ interface Iproducts {
     default_price: Iprice,
     images: string[],
     description: "",
+}
+
+interface IcartItems {
+    quantity: number,
+    product: string,
 }
 
 // lägger till saker i kundkorg, tänk på:
@@ -33,8 +38,8 @@ interface IusersContext {
     setregisterEmail: React.Dispatch<React.SetStateAction<string>>;
     products: Iproducts[];
     setProducts: React.Dispatch<React.SetStateAction<Iproducts[]>>;
-    // cart: Iproducts[],
-    // setCart: React.Dispatch<React.SetStateAction<Iproducts[]>>;
+    cart: IcartItems[],
+    setCart: React.Dispatch<React.SetStateAction<IcartItems[]>>;
 }
 
 
@@ -53,8 +58,8 @@ const defaultValues: IusersContext = {
     setregisterEmail: () => {},
     products: [],
     setProducts: () => {},
-    // cart: [],
-    // setCart: () => [],
+    cart: [],
+    setCart: () => [],
 }
 
 const UsersContext = createContext<IusersContext>(defaultValues);
@@ -71,6 +76,7 @@ const UserProvider = ({ children }: PropsWithChildren) => {
     const [registerPassword, setregisterPassword] = useState("");
     const [registerEmail, setregisterEmail] = useState("");
     const [products, setProducts] = useState<Iproducts[]>([]);
+    const [ cart, setCart] = useState<IcartItems[]>([]);
     // const [cart, setCart] = useState([]);
 
     useEffect(() => {
@@ -97,8 +103,8 @@ const UserProvider = ({ children }: PropsWithChildren) => {
             setregisterEmail,
             products,
             setProducts,
-            // cart,
-            // setCart,
+            cart,
+            setCart,
         }} >
             {children}
         </UsersContext.Provider>

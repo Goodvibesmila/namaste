@@ -11,6 +11,8 @@ import { Routes, Route} from 'react-router-dom'
 import Home from "../components/Home";
 import ManageUsers from '../components/ManageUsers';
 import Products from './Products';
+import Checkout from './checkout';
+import Confirmation from './confirmation';
 // import ShoppingCart from './ShoppingCart';
 
 function RouterFile() {
@@ -26,11 +28,10 @@ function RouterFile() {
 
     <Routes>
     <Route path='/' element={<Home />}/>
-    <Route path='../components/ManageUsers' element={<ManageUsers />}/>
-    <Route path='../components/Products' element={< Products />}/>
-    {/* <Route path='../components/ShoppingCart' element={< ShoppingCart />}/> */}
-
-
+    <Route path='/ManageUsers' element={<ManageUsers />}/>
+    <Route path='/Products' element={< Products />}/>
+    <Route path='/checkout' element={< Checkout />}/>
+    <Route path='/confirmation' element={< Confirmation />}/>
 
   </Routes>
   )

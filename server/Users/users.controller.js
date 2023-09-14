@@ -15,7 +15,6 @@ const app = express();
 
 function getAllUsers(req, res) {
         const users = fs.readFileSync(filePath);
-
         return JSON.parse(users);
 }
 
@@ -30,6 +29,7 @@ async function registerUser(req, res) {
         return;
         }
             const users = JSON.parse(data)
+            console.log(data)
 
             const { password } = req.body;
             const bcryptPassword = await bcrypt.hash(password, 10);

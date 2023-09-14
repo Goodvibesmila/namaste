@@ -7,6 +7,8 @@ const cookieSession = require('cookie-session');
 // Hämtar in Routes
 const { userRouter } = require("./Users/users.router");
 const { productsRouter } = require("./products/products.router");
+const { checkoutRouter } = require("./checkout/checkout.router");
+
 
 // Tolk.
 const app = express();
@@ -32,6 +34,6 @@ app.use(
   // Första delen av url:en vi ska ansluta till.
   // i vår routerfil har vi en get sen /users, så den komemr att hämta in users.
   // Så genom att ansluta till den fulla url:en så kör vi funktionen som finns i router.
-app.use("/api", userRouter, productsRouter)
+app.use("/api", userRouter, productsRouter, checkoutRouter)
 
 module.exports = { app };

@@ -47,7 +47,7 @@ function ManageUsers() {
 
       const submitRegisterUser = () => {
         // Ger dom namnen som servern vill ha.
-        const registerUserData = { name:registerUser, password:registerPassword, registerEmail: email};
+        const registerUserData = { name:registerUser, password:registerPassword, email: registerEmail};
       
         fetch("api/registerUser", {
           method: "POST",
@@ -79,8 +79,6 @@ function ManageUsers() {
     <br />
     <button className='loginbutton'  onClick={() => handleSubmit()}> Logga in </button>
     <br />
-
-
 
     <p> Registera dig</p>
     <input type="name" placeholder="Namn" value={registerUser} onChange={(e) => setregisterUser(e.target.value)} />
