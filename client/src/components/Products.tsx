@@ -74,22 +74,25 @@ function Products() {
 
     return (
 
-    <div>
+    <div className="Container">
 
+        <div className="productContainer">
         <ul>
             {products.map((product) => (
             <li key={product.id}>
-                {product.name}
-                <img src={product.images[0]}/>
-                {product.description}
-                <p>{(product.default_price.unit_amount / 100).toFixed(2)} kr</p>
+                <p className="productTitle">{product.name}</p>
+                <img src={product.images[0]} className="image" alt="produktbild"/>
+                <p className="productDescription">{product.description}</p>
+                <p className="productPrice">{(product.default_price.unit_amount / 100).toFixed(2)} kr</p>
                 <button  onClick={() => AddCartItem(product.default_price.id)}>Lägg till i kundkorg</button>
             </li>
             ))}
         </ul>
-
-
+        </div>
+      
+      <div className="cartContainer">
         <ul>
+          <h3>KundKorg</h3>
         {cart.map((cartItem) => (
           <li key={cartItem.product}>
             {cartItem.product}
@@ -97,6 +100,7 @@ function Products() {
           </li>
         ))}
       </ul>
+      </div>
 
     </div>
   );

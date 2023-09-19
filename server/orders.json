@@ -179,5 +179,37 @@
         "price": 449
       }
     ]
+  },
+  {
+    "created": 1695144277,
+    "customer": "Mila",
+    "products": [
+      {
+        "product": "Bohemian YogiSession",
+        "quantity": 6,
+        "price": 449
+      },
+      {
+        "product": "Breathwork",
+        "quantity": 2,
+        "price": 199
+      }
+    ]
+  },
+  {
+    "created": 1695144712,
+    "customer": "liselotte",
+    "products": [
+      {
+        "product": "Breathwork",
+        "quantity": 1,
+        "price": 199
+      },
+      {
+        "product": "Bohemian YogiSession",
+        "quantity": 1,
+        "price": 449
+      }
+    ]
   }
 ]

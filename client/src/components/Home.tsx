@@ -21,13 +21,19 @@ function Home() {
     <div>
 
       <header> 
+        <h1> NAMASTE STORE </h1>
+      <div className="LoggedinContainer">
         {validateMypages ? <p> Välkommen {username} </p> : ""}
         {validateMypages ? <Link to="/mypages"><button> Dina Ordrar </button></Link> : "" }
+      </div>
+        <ManageUsers/>
+        <h3> Få 10% rabbat med rabattkoden "halloween10" när du checkar ut.</h3>
+        <img src="./IMAGES/header.jpg" />
       </header>
-      <ManageUsers/>
+    <div className="bodyContainer">
       <Products/>
       <Checkout/>
-
+    </div>
     </div>
   );
   }

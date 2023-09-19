@@ -74,20 +74,23 @@ function ManageUsers() {
 
   return (
 
-    <div>
+    <div className="InputfieldsContainer">
 
+      <div className="LoginContainer">
         <p> Logga in </p>
         <input type="email" placeholder="E-post" value={email} onChange={(e) => setEmail(e.target.value)} />
-        <input type="password" placeholder="Skriv" value={password} onChange={(e) => setPassword(e.target.value)} />
-        <button className='loginbutton'  onClick={() => handleSubmit()}> Logga in </button>
+        <input type="password" placeholder="Lösenord" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <button onClick={() => handleSubmit()}> Logga in </button>
+      </div>
 
-
+      <div className="RegisterContainer">
         <p> Registera dig</p>
         <input type="name" placeholder="Namn" value={registerUser} onChange={(e) => setregisterUser(e.target.value)} />
         <input type="email" placeholder="Epost" value={registerEmail} onChange={(e) => setregisterEmail(e.target.value)} />
         <input type="password" placeholder="Lösenord" value={registerPassword} onChange={(e) => setregisterPassword(e.target.value)} />
-        <button className='loginbutton'  onClick={() => submitRegisterUser()}> Skapa </button>
-
+        <button onClick={() => submitRegisterUser()}> Skapa </button>
+      </div>
+     
     </div>
   )
 }

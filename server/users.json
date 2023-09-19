@@ -32,5 +32,11 @@
     "email": "m@m.se",
     "name": "Mila",
     "password": "$2b$10$VOjAM.XCiYWntEFUgTYtFerlp27VM1SyJsWQ3zplsjisALj1TcKrK"
+  },
+  {
+    "id": "cus_OfTmPwCV8AKLXa",
+    "email": "freddans@mejl.se",
+    "name": "Fredrik",
+    "password": "$2b$10$7QYpTQ1jEL5P0/1HfiQHSuFEvUXo45kxjoiu1EeroEJ78VU6FrPxS"
   }
 ]

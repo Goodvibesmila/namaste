@@ -58,8 +58,8 @@ const validateCheckout = isLoggedin;
          
   return (
 
-    <div>
-      <br />
+    <div className='checkoutContainer'>
+      
       { validateCheckout ? <p> Är du redo att checka ut din order {username}? Tryck på "gå till kassan"- knappen. </p> : "Du behöver logga in för att kunna checka ut."}
       { validateCheckout ? <button className='purchasebutton' onClick={HandlePayment}> Gå till kassan </button> : "" }
 

@@ -46,7 +46,7 @@ function Mypages() {
 
   return (
 
-    <div>
+    <div className="myPagesContainer">
 
         <h1> Mina ordrar </h1>
 
@@ -55,7 +55,8 @@ function Mypages() {
             <li key={order.customer}>
             {order.products.map((product: IOrderProduct) => (
             <div key={product.product}>
-                Product: {product.product} - Antal: {product.quantity} - Pris: {product.price} kr
+
+              <p>  Product: {product.product} - Antal: {product.quantity} <div className="myPagesPrice">Pris: {product.price} kr/styck </div> </p>
             </div>
             ))}
             </li>
