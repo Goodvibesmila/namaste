@@ -1,8 +1,8 @@
 
 const express = require("express");
-const { checkout } = require("./checkout.controller")
+const { checkout, verifySession } = require("./checkout.controller")
 
-const checkoutRouter = express.Router().post("/create-checkout-session", checkout)
+const checkoutRouter = express.Router().post("/create-checkout-session", checkout).post("/verify-checkout-session", verifySession)
 
 
 module.exports = {checkoutRouter}

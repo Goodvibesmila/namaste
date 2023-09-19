@@ -1,12 +1,13 @@
 import {useUsersContext} from "../Context/NamasteContext"
-
 import "../style.css"
+
 
 function ManageUsers() {
 
     const {
         email,
         setEmail,
+        setUsername,
         password,
         setPassword,
         registerUser,
@@ -15,11 +16,12 @@ function ManageUsers() {
         setregisterPassword,
         registerEmail,
         setregisterEmail,
+        setIsLoggedin,
     } = useUsersContext();
 
 
 
-    // Logga in
+    
     const handleSubmit = () => {
 
         const userData = { email, password};
@@ -31,24 +33,25 @@ function ManageUsers() {
             "Content-Type": "application/json",
           },
         })
+
           .then((response) => response.json())
           .then((result) => {
-            
-            console.log(result);
+            setUsername(result.name)
+            setIsLoggedin(true);
           })
+
           .catch((error) => {
-          
             console.error(error);
           });
       };
 
 
-      // Registrera 
 
-      const submitRegisterUser = () => {
-        // Ger dom namnen som servern vill ha.
-        const registerUserData = { name:registerUser, password:registerPassword, email: registerEmail};
-      
+
+    const submitRegisterUser = () => {
+
+      const registerUserData = { name:registerUser, password:registerPassword, email: registerEmail};
+    
         fetch("api/registerUser", {
           method: "POST",
           body: JSON.stringify( registerUserData ),
@@ -56,42 +59,39 @@ function ManageUsers() {
             "Content-Type": "application/json",
           },
         })
+        
           .then((response) => response.json())
           .then((result) => {
-            
             console.log(result);
           })
+
           .catch((error) => {
-          
             console.error(error);
           });
       };
   
 
-    // Skapa funktioner här för vad som ska ske med informationen en användare registrerar
-    // Eller när en användare försöker logga in.
+
   return (
-    // Jag behöver spara inputinformationen i ett state, som jag sedan skickar med till servern, så att arrayen dynamiskt uppdateras.
+
     <div>
+
         <p> Logga in </p>
         <input type="email" placeholder="E-post" value={email} onChange={(e) => setEmail(e.target.value)} />
         <input type="password" placeholder="Skriv" value={password} onChange={(e) => setPassword(e.target.value)} />
-    <br />
-    <button className='loginbutton'  onClick={() => handleSubmit()}> Logga in </button>
-    <br />
+        <button className='loginbutton'  onClick={() => handleSubmit()}> Logga in </button>
 
-    <p> Registera dig</p>
-    <input type="name" placeholder="Namn" value={registerUser} onChange={(e) => setregisterUser(e.target.value)} />
-    <br/>
-    <input type="email" placeholder="Epost" value={registerEmail} onChange={(e) => setregisterEmail(e.target.value)} />
-    <br/>
-    <input type="password" placeholder="Lösenord" value={registerPassword} onChange={(e) => setregisterPassword(e.target.value)} />
-    
-    <br />
-    <button className='loginbutton'  onClick={() => submitRegisterUser()}> Skapa </button>
-    <br />
-        </div>
+
+        <p> Registera dig</p>
+        <input type="name" placeholder="Namn" value={registerUser} onChange={(e) => setregisterUser(e.target.value)} />
+        <input type="email" placeholder="Epost" value={registerEmail} onChange={(e) => setregisterEmail(e.target.value)} />
+        <input type="password" placeholder="Lösenord" value={registerPassword} onChange={(e) => setregisterPassword(e.target.value)} />
+        <button className='loginbutton'  onClick={() => submitRegisterUser()}> Skapa </button>
+
+    </div>
   )
 }
+
+
 
 export default ManageUsers

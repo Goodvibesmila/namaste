@@ -1,4 +1,6 @@
-import { useState, createContext, useContext, PropsWithChildren, useEffect} from "react";
+import { useState, createContext, useContext, PropsWithChildren} from "react";
+
+
 
 interface Iprice {
     id: string,
@@ -6,21 +8,43 @@ interface Iprice {
 }
 
 interface Iproducts {
-    id: number,
+    id: string,
     name: string,
     default_price: Iprice,
     images: string[],
     description: "",
 }
 
+
+
 interface IcartItems {
     quantity: number,
     product: string,
 }
 
-// lägger till saker i kundkorg, tänk på:
-// cartitem productsquantity + price.id 
-//default type - krävs vid betalningen.
+// interface IOrders {
+//     products: string[],
+//     customer: string,
+//     quantity: number,
+//     price: number,
+// }
+
+
+export interface IUserOrders {
+    created: string,
+    customer: string,
+    products: IOrderProduct[],
+}
+
+export interface IOrderProduct {
+    product: string,
+    quantity: number,
+    price: number,
+}
+
+
+
+
 
 
 interface IusersContext {
@@ -28,6 +52,8 @@ interface IusersContext {
     setInputValue: React.Dispatch<React.SetStateAction<string>>;
     email: string;
     setEmail: React.Dispatch<React.SetStateAction<string>>;
+    username: string,
+    setUsername: React.Dispatch<React.SetStateAction<string>>;
     password: string;
     setPassword: React.Dispatch<React.SetStateAction<string>>;
     registerUser: string;
@@ -38,9 +64,19 @@ interface IusersContext {
     setregisterEmail: React.Dispatch<React.SetStateAction<string>>;
     products: Iproducts[];
     setProducts: React.Dispatch<React.SetStateAction<Iproducts[]>>;
-    cart: IcartItems[],
+    cart: IcartItems[];
     setCart: React.Dispatch<React.SetStateAction<IcartItems[]>>;
+    isLoggedin: boolean;
+    setIsLoggedin: React.Dispatch<React.SetStateAction<boolean>>;
+    // orders: IOrders[];
+    // setOrders: React.Dispatch<React.SetStateAction<IOrders[]>>;
+    userOrders: IUserOrders[];
+    setUserOrders:React.Dispatch<React.SetStateAction<IUserOrders[]>>;
 }
+
+
+
+
 
 
 const defaultValues: IusersContext = {
@@ -48,6 +84,8 @@ const defaultValues: IusersContext = {
     setInputValue: () => {},
     email: "",
     setEmail: () => {},
+    username: "",
+    setUsername: () => {},
     password: "",
     setPassword: () => {},
     registerUser: "",
@@ -60,10 +98,24 @@ const defaultValues: IusersContext = {
     setProducts: () => {},
     cart: [],
     setCart: () => [],
+    isLoggedin: false,
+    setIsLoggedin: () => {},
+    // orders: [],
+    // setOrders: () => {},
+    userOrders: [],
+    setUserOrders: () => {},
 }
 
+
+
+
 const UsersContext = createContext<IusersContext>(defaultValues);
+// eslint-disable-next-line react-refresh/only-export-components
 export const useUsersContext = () => useContext(UsersContext)
+
+
+
+
 
 
 const UserProvider = ({ children }: PropsWithChildren) => {
@@ -71,20 +123,21 @@ const UserProvider = ({ children }: PropsWithChildren) => {
 
     const [inputValue, setInputValue] = useState("");
     const [email, setEmail] = useState("");
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [registerUser, setregisterUser] = useState("");
     const [registerPassword, setregisterPassword] = useState("");
     const [registerEmail, setregisterEmail] = useState("");
     const [products, setProducts] = useState<Iproducts[]>([]);
     const [ cart, setCart] = useState<IcartItems[]>([]);
-    // const [cart, setCart] = useState([]);
+    const [ isLoggedin, setIsLoggedin] = useState (false);
+    // const [ orders, setOrders ] = useState<IOrders[]>([]);
+    const [userOrders, setUserOrders] = useState<IUserOrders[]>([]);
 
-    useEffect(() => {
-        console.log(products)
 
-    }, [products]) 
 
-    
+
+
 
     return (
         <UsersContext.Provider
@@ -93,6 +146,8 @@ const UserProvider = ({ children }: PropsWithChildren) => {
             setInputValue,
             email,
             setEmail,
+            username,
+            setUsername,
             password,
             setPassword,
             registerUser,
@@ -105,6 +160,12 @@ const UserProvider = ({ children }: PropsWithChildren) => {
             setProducts,
             cart,
             setCart,
+            isLoggedin,
+            setIsLoggedin,
+            // orders,
+            // setOrders,
+            userOrders,
+            setUserOrders
         }} >
             {children}
         </UsersContext.Provider>
