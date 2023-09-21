@@ -70,7 +70,7 @@ function Products() {
     }
 
 
-
+    const cartCondition =  cart.length > 0;
 
     return (
 
@@ -93,12 +93,10 @@ function Products() {
       <div className="cartContainer">
         <ul>
           <h3>KundKorg</h3>
-        {cart.map((cartItem) => (
-          <li key={cartItem.product}>
-            {cartItem.product}
-            ({cartItem.quantity} st)
-          </li>
-        ))}
+          { cartCondition ? (
+              <p>{cart.length} st</p>
+              )  : null}
+              
       </ul>
       </div>
 

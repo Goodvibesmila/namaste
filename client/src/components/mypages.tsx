@@ -51,12 +51,11 @@ function Mypages() {
         <h1> Mina ordrar </h1>
 
         <ul>
-            {userOrders.map((order: IUserOrders) => (
-            <li key={order.customer}>
-            {order.products.map((product: IOrderProduct) => (
-            <div key={product.product}>
-
-              <p>  Product: {product.product} - Antal: {product.quantity} <div className="myPagesPrice">Pris: {product.price} kr/styck </div> </p>
+            {userOrders.map((order: IUserOrders, index: number) => (
+            <li key={index}>
+            {order.products.map((product: IOrderProduct, index: number) => (
+            <div key={index}>
+              <p>  Product: {product.product} - Antal: {product.quantity} <span className="myPagesPrice">Pris: {product.price} kr/styck </span> </p>
             </div>
             ))}
             </li>

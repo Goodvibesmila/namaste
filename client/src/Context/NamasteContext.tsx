@@ -22,13 +22,6 @@ interface IcartItems {
     product: string,
 }
 
-// interface IOrders {
-//     products: string[],
-//     customer: string,
-//     quantity: number,
-//     price: number,
-// }
-
 
 export interface IUserOrders {
     created: string,
@@ -68,8 +61,6 @@ interface IusersContext {
     setCart: React.Dispatch<React.SetStateAction<IcartItems[]>>;
     isLoggedin: boolean;
     setIsLoggedin: React.Dispatch<React.SetStateAction<boolean>>;
-    // orders: IOrders[];
-    // setOrders: React.Dispatch<React.SetStateAction<IOrders[]>>;
     userOrders: IUserOrders[];
     setUserOrders:React.Dispatch<React.SetStateAction<IUserOrders[]>>;
 }
@@ -100,8 +91,6 @@ const defaultValues: IusersContext = {
     setCart: () => [],
     isLoggedin: false,
     setIsLoggedin: () => {},
-    // orders: [],
-    // setOrders: () => {},
     userOrders: [],
     setUserOrders: () => {},
 }
@@ -131,7 +120,6 @@ const UserProvider = ({ children }: PropsWithChildren) => {
     const [products, setProducts] = useState<Iproducts[]>([]);
     const [ cart, setCart] = useState<IcartItems[]>([]);
     const [ isLoggedin, setIsLoggedin] = useState (false);
-    // const [ orders, setOrders ] = useState<IOrders[]>([]);
     const [userOrders, setUserOrders] = useState<IUserOrders[]>([]);
 
 
@@ -162,8 +150,6 @@ const UserProvider = ({ children }: PropsWithChildren) => {
             setCart,
             isLoggedin,
             setIsLoggedin,
-            // orders,
-            // setOrders,
             userOrders,
             setUserOrders
         }} >

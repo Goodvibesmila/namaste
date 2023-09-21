@@ -84,7 +84,6 @@ async function login(req, res, next) {
 
       req.session = dbuser;
       res.status(200).json(dbuser);
-      res.json(dbuser)
 
     } catch (error) {
       next(error);

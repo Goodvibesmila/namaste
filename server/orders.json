@@ -211,5 +211,37 @@
         "price": 449
       }
     ]
+  },
+  {
+    "created": 1695194407,
+    "customer": "Mila",
+    "products": [
+      {
+        "product": "Chakra andning",
+        "quantity": 5,
+        "price": 249
+      },
+      {
+        "product": "Vinyasa yoga",
+        "quantity": 1,
+        "price": 99
+      }
+    ]
+  },
+  {
+    "created": 1695202881,
+    "customer": "Mila",
+    "products": [
+      {
+        "product": "Chakra andning",
+        "quantity": 1,
+        "price": 249
+      },
+      {
+        "product": "Vinyasa yoga",
+        "quantity": 1,
+        "price": 99
+      }
+    ]
   }
 ]
